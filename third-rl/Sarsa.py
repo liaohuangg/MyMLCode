@@ -20,7 +20,7 @@ r = np.matrix(r)
 # train
 # define the greedy parameter
 gamma = 0.8
-for i in range(100):
+for i in range(5000):
     # for each train, choose one state randomly
     state = random.randint(0,6)
     while state != 6:
@@ -30,10 +30,16 @@ for i in range(100):
             if(r[state, action] >= 0):
                 r_pos_action.append(action)
         # the next state choose valid action randomly
-        randomIndex = random.randint(0, len(r_pos_action) - 1)
-        next_state = r_pos_action[randomIndex]
-        # update q matrix by choosing the action that may yield the greatest benefit next.
-        q[state, next_state] = r[state, next_state] + gamma * q[next_state].max()
+        next_state = r_pos_action[random.randint(0, len(r_pos_action) - 1)]
+        
+        actions = []
+        for a in range(7):
+            if(r[next_state, a] >= 0):
+                actions.append(a)
+        # After reaching new state, choose an action according previous policy
+        next_action = actions[random.randint(0, len(actions) - 1)]
+        q[state, action] = r[state, next_state] + gamma * q[next_state, next_action]
+        
         state = next_state
 print("\nprint Q\n")
 print(q)
