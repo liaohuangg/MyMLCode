@@ -32,19 +32,19 @@ for i in range(100):
         # the next state choose valid action randomly
         randomIndex = random.randint(0, len(r_pos_action) - 1)
         next_state = r_pos_action[randomIndex]
-        # update q matrix by choosing the action that may yield the greatest benefit next.
+        # update q matrix
         q[state, next_state] = r[state, next_state] + gamma * q[next_state].max()
         state = next_state
-print("\nprint Q\n")
+print("\print Q\n")
 print(q)
 
 # use Q matrix to teach us how to move to the target
 state = random.randint(0,6)
-print('\nrobot at {}'.format(state))
+print('robot at {}'.format(state))
 count = 0
 while state != 6:
     if count > 20: # if we have tried 20 time, failed
-        print('\nfail\n')
+        print('fail')
         break
     
     # choose q_max
@@ -56,5 +56,3 @@ while state != 6:
     # choose a valid action randomly
     randomIndex = random.randint(0, len(q_max_action) - 1)
     next_state = q_max_action[randomIndex]
-    print("\nrobot goes to " + str(next_state) + "\n")
-    state = next_state
