@@ -17,7 +17,7 @@ num_class = 2
 # 设置随机种子（保证可复现性）
 np.random.seed(24)
 
-features, labels = arrayGenCla(num_examples,num_inputs, num_class, deg_dispersion=[4, 2], bias=True)
+features, labels = arrayGenCla(num_examples,num_inputs, num_class, deg_dispersion=[6, 2], bias=True)
 # 划分数据集
 Xtrain, Xtest, ytrain, ytest = array_split(features, labels, 0.2, 24, True)
 
