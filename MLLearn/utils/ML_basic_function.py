@@ -48,16 +48,16 @@ def arrayGenReg(num_examples = 1000, w = [2, -1, 1], bias = True, delta = 0.01, 
     
     if bias == True:
         num_inputs = len(w)-1
-        features_true = np.random.randn(num_examples, num_inputs)  # 数据集特征个数
+        features_true = np.random.rand(num_examples, num_inputs)  # 数据集特征个数
         w_true = np.array(w[:-1]).reshape(-1, 1)  # 原始特征
         b_true = np.array(w[-1])  # 自变量系数
         labels_true = np.power(features_true, deg).dot(w_true) + b_true  # 严格满足人造规律的标签
         features = np.concatenate((features_true, np.ones_like(labels_true)), axis=1)  # 加上全为1的一列之后的特征
     else:
         num_inputs = len(w)
-        features = np.random.randn(num_examples, num_inputs)
+        features = np.random.rand(num_examples, num_inputs)
         w_true = np.array(w).reshape(-1, 1)
-        labels_true = np.power(features_true, deg).dot(w_true)
+        labels_true = np.power(features, deg).dot(w_true)
     labels = labels_true + np.random.normal(size = labels_true.shape) * delta
     return features, labels
 
@@ -158,8 +158,8 @@ def grad_func(X, w, y) :
     '''
     logistic regression gradient descent
     '''
-    print(w)
-    print(X[:10])
+    # print(w)
+    # print(X[:10])
     m = X.shape[0]
     grad = X.T.dot(sigmoid(X, w) - y) / m
     return grad
@@ -225,3 +225,32 @@ def logit_acc(
     
     # 计算准确率
     return (y_cal == y).mean()
+
+def plot_polynomial_fit(x, y, deg):
+    """
+    绘制多项式拟合曲线与参考曲线的对比图
+    
+    参数：
+        x : 原始数据的特征值
+        y : 原始数据的标签值
+        deg : 多项式拟合的阶数
+    """
+    # 多项式拟合（返回多项式系数）
+    p = np.poly1d(np.polyfit(x, y, deg))
+    
+    # 生成0到1之间200个均匀分布的点用于绘制曲线
+    t = np.linspace(0, 1, 200)
+    
+    # 绘制三条曲线：
+    # 1. 'ro' : 原始数据点（红色圆点）
+    # 2. '-' : 拟合多项式曲线（实线）
+    # 3. 'r--': 参考曲线 sqrt(t)（红色虚线）
+    plt.plot(x, y, 'ro',       # 原始数据
+             t, p(t), '-',     # 拟合曲线 
+             t, np.sqrt(t), 'r--')  # 参考曲线
+    # 建议补充显示图形
+    plt.show()
+    plt.pause(3)
+    plt.close()
+
+    # 过拟合体现为复杂折线
