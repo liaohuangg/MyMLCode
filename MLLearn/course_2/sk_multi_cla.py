@@ -31,6 +31,7 @@ from sklearn.datasets import load_iris
 
 ## 加入评估指标函数
 from sklearn.metrics import precision_score, recall_score, f1_score
+from sklearn.metrics import roc_auc_score
 ## 都是基于混淆矩阵
 # 真实标签和预测标签
 y_true = np.array([1, 0, 0, 1, 0, 1])
