@@ -39,8 +39,8 @@ joblib.dump(pipe, 'pipe.model')
 pipe1 = joblib.load('pipe.model')
 pipe1.score(newTX, newTY)
 
-from sklearn.preprocessing import PolynomialFeatures
-# 二阶特征衍生
-x = np.random.randn(2, 3)
-PolynomialFeatures(degree=2).fit_transform()
+# from sklearn.preprocessing import PolynomialFeatures
+# # 二阶特征衍生
+# x = np.random.randn(2, 3)
+# PolynomialFeatures(degree=2).fit_transform()
  
