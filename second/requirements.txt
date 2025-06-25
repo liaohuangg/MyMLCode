@@ -1,5 +1,0 @@
-# please use 'pip install -r requirements.txt' to install packages
-libsvm-official
-numpy
-pandas
-matplotlib
