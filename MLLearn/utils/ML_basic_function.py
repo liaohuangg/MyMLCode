@@ -252,5 +252,3 @@ def plot_polynomial_fit(x, y, deg):
     plt.show()
     plt.pause(3)
     plt.close()
-
-    # 过拟合体现为复杂折线
