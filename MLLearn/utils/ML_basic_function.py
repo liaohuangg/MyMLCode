@@ -252,3 +252,41 @@ def plot_polynomial_fit(x, y, deg):
     plt.show()
     plt.pause(3)
     plt.close()
+
+
+def plot_show_grid_tuning(Option, trainRMSE, testRMSE, trainSTD, testSTD):
+        
+    # 设置画布大小和分辨率
+    plt.figure(figsize=(8, 6), dpi=80)
+
+    # 定义x轴为参数选项（假设Option已预先定义，如[1,5,10,...,100]）
+    xaxis = Option  
+
+    # 绘制训练集RMSE曲线（黑色实线）
+    plt.plot(xaxis, trainRMSE, color="k", label="RandomForestTrain")
+    # 绘制测试集RMSE曲线（红色实线）
+    plt.plot(xaxis, testRMSE, color="red", label="RandomForestTest")
+
+    # 绘制训练集标准差区间（黑色虚线）
+    plt.plot(xaxis, trainRMSE + trainSTD, color="k", linestyle="dotted")  # 上界
+    plt.plot(xaxis, trainRMSE - trainSTD, color="k", linestyle="dotted")  # 下界
+
+    # 绘制测试集标准差区间（红色虚线）
+    plt.plot(xaxis, testRMSE + testSTD, color="red", linestyle="dotted")  # 上界
+    plt.plot(xaxis, testRMSE - testSTD, color="red", linestyle="dotted")  # 下界
+
+    # 设置x轴刻度（显示所有参数选项）
+    plt.xticks([*xaxis])  # 展开Option列表作为刻度
+
+    # 添加图例（显示在右上角）
+    plt.legend(loc=1)  # loc=1表示右上角
+
+    # 显示图形
+    plt.show()
+    plt.pause(3)
+    plt.close()
+
+def RMES(result):
+    train = abs(result["train_score"])**0.5
+    test = abs(result["test_score"])**0.5
+    return train.mean(), test.mean()

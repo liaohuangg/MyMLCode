@@ -1,6 +1,3 @@
-''''
-在sklearn中使用网格搜索调参
-'''
 from sklearn.preprocessing import StandardScaler 
 from sklearn.pipeline import make_pipeline
 from sklearn.linear_model import LogisticRegression

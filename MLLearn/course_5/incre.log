@@ -1,0 +1,149 @@
+(50000, 51) (50000, 1)
+/root/workspace/tool/anaconda3/envs/dl/lib/python3.9/site-packages/sklearn/base.py:1389: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  return fit_method(estimator, *args, **kwargs)
+[Parallel(n_jobs=8)]: Using backend ThreadingBackend with 8 concurrent workers.
+[Parallel(n_jobs=8)]: Done   6 out of  10 | elapsed:    0.0s remaining:    0.0s
+[Parallel(n_jobs=8)]: Done  10 out of  10 | elapsed:    0.1s finished
+DONE 50000
+(50000, 51) (50000, 1)
+/root/workspace/tool/anaconda3/envs/dl/lib/python3.9/site-packages/sklearn/base.py:1389: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  return fit_method(estimator, *args, **kwargs)
+[Parallel(n_jobs=8)]: Using backend ThreadingBackend with 8 concurrent workers.
+[Parallel(n_jobs=8)]: Done   6 out of  10 | elapsed:    0.0s remaining:    0.0s
+[Parallel(n_jobs=8)]: Done  10 out of  10 | elapsed:    0.1s finished
+DONE 100000
+(50000, 51) (50000, 1)
+/root/workspace/tool/anaconda3/envs/dl/lib/python3.9/site-packages/sklearn/base.py:1389: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  return fit_method(estimator, *args, **kwargs)
+[Parallel(n_jobs=8)]: Using backend ThreadingBackend with 8 concurrent workers.
+[Parallel(n_jobs=8)]: Done   6 out of  10 | elapsed:    0.0s remaining:    0.0s
+[Parallel(n_jobs=8)]: Done  10 out of  10 | elapsed:    0.1s finished
+DONE 150000
+(50000, 51) (50000, 1)
+/root/workspace/tool/anaconda3/envs/dl/lib/python3.9/site-packages/sklearn/base.py:1389: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  return fit_method(estimator, *args, **kwargs)
+[Parallel(n_jobs=8)]: Using backend ThreadingBackend with 8 concurrent workers.
+[Parallel(n_jobs=8)]: Done   6 out of  10 | elapsed:    0.0s remaining:    0.0s
+[Parallel(n_jobs=8)]: Done  10 out of  10 | elapsed:    0.1s finished
+DONE 200000
+(50000, 51) (50000, 1)
+/root/workspace/tool/anaconda3/envs/dl/lib/python3.9/site-packages/sklearn/base.py:1389: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  return fit_method(estimator, *args, **kwargs)
+[Parallel(n_jobs=8)]: Using backend ThreadingBackend with 8 concurrent workers.
+[Parallel(n_jobs=8)]: Done   6 out of  10 | elapsed:    0.0s remaining:    0.0s
+[Parallel(n_jobs=8)]: Done  10 out of  10 | elapsed:    0.1s finished
+DONE 250000
+(50000, 51) (50000, 1)
+/root/workspace/tool/anaconda3/envs/dl/lib/python3.9/site-packages/sklearn/base.py:1389: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  return fit_method(estimator, *args, **kwargs)
+[Parallel(n_jobs=8)]: Using backend ThreadingBackend with 8 concurrent workers.
+[Parallel(n_jobs=8)]: Done   6 out of  10 | elapsed:    0.0s remaining:    0.0s
+[Parallel(n_jobs=8)]: Done  10 out of  10 | elapsed:    0.1s finished
+DONE 300000
+(50000, 51) (50000, 1)
+/root/workspace/tool/anaconda3/envs/dl/lib/python3.9/site-packages/sklearn/base.py:1389: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  return fit_method(estimator, *args, **kwargs)
+[Parallel(n_jobs=8)]: Using backend ThreadingBackend with 8 concurrent workers.
+[Parallel(n_jobs=8)]: Done   6 out of  10 | elapsed:    0.0s remaining:    0.0s
+[Parallel(n_jobs=8)]: Done  10 out of  10 | elapsed:    0.1s finished
+DONE 350000
+(50000, 51) (50000, 1)
+/root/workspace/tool/anaconda3/envs/dl/lib/python3.9/site-packages/sklearn/base.py:1389: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  return fit_method(estimator, *args, **kwargs)
+[Parallel(n_jobs=8)]: Using backend ThreadingBackend with 8 concurrent workers.
+[Parallel(n_jobs=8)]: Done   6 out of  10 | elapsed:    0.0s remaining:    0.0s
+[Parallel(n_jobs=8)]: Done  10 out of  10 | elapsed:    0.1s finished
+DONE 400000
+(50000, 51) (50000, 1)
+/root/workspace/tool/anaconda3/envs/dl/lib/python3.9/site-packages/sklearn/base.py:1389: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  return fit_method(estimator, *args, **kwargs)
+[Parallel(n_jobs=8)]: Using backend ThreadingBackend with 8 concurrent workers.
+[Parallel(n_jobs=8)]: Done   6 out of  10 | elapsed:    0.0s remaining:    0.0s
+[Parallel(n_jobs=8)]: Done  10 out of  10 | elapsed:    0.1s finished
+DONE 450000
+(50000, 51) (50000, 1)
+/root/workspace/tool/anaconda3/envs/dl/lib/python3.9/site-packages/sklearn/base.py:1389: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  return fit_method(estimator, *args, **kwargs)
+[Parallel(n_jobs=8)]: Using backend ThreadingBackend with 8 concurrent workers.
+[Parallel(n_jobs=8)]: Done   6 out of  10 | elapsed:    0.0s remaining:    0.0s
+[Parallel(n_jobs=8)]: Done  10 out of  10 | elapsed:    0.1s finished
+DONE 500000
+(50000, 51) (50000, 1)
+/root/workspace/tool/anaconda3/envs/dl/lib/python3.9/site-packages/sklearn/base.py:1389: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  return fit_method(estimator, *args, **kwargs)
+[Parallel(n_jobs=8)]: Using backend ThreadingBackend with 8 concurrent workers.
+[Parallel(n_jobs=8)]: Done   6 out of  10 | elapsed:    0.0s remaining:    0.0s
+[Parallel(n_jobs=8)]: Done  10 out of  10 | elapsed:    0.1s finished
+DONE 550000
+(50000, 51) (50000, 1)
+/root/workspace/tool/anaconda3/envs/dl/lib/python3.9/site-packages/sklearn/base.py:1389: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  return fit_method(estimator, *args, **kwargs)
+[Parallel(n_jobs=8)]: Using backend ThreadingBackend with 8 concurrent workers.
+[Parallel(n_jobs=8)]: Done   6 out of  10 | elapsed:    0.0s remaining:    0.0s
+[Parallel(n_jobs=8)]: Done  10 out of  10 | elapsed:    0.1s finished
+DONE 600000
+(50000, 51) (50000, 1)
+/root/workspace/tool/anaconda3/envs/dl/lib/python3.9/site-packages/sklearn/base.py:1389: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  return fit_method(estimator, *args, **kwargs)
+[Parallel(n_jobs=8)]: Using backend ThreadingBackend with 8 concurrent workers.
+[Parallel(n_jobs=8)]: Done   6 out of  10 | elapsed:    0.0s remaining:    0.0s
+[Parallel(n_jobs=8)]: Done  10 out of  10 | elapsed:    0.1s finished
+DONE 650000
+(50000, 51) (50000, 1)
+/root/workspace/tool/anaconda3/envs/dl/lib/python3.9/site-packages/sklearn/base.py:1389: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  return fit_method(estimator, *args, **kwargs)
+[Parallel(n_jobs=8)]: Using backend ThreadingBackend with 8 concurrent workers.
+[Parallel(n_jobs=8)]: Done   6 out of  10 | elapsed:    0.0s remaining:    0.0s
+[Parallel(n_jobs=8)]: Done  10 out of  10 | elapsed:    0.1s finished
+DONE 700000
+(50000, 51) (50000, 1)
+/root/workspace/tool/anaconda3/envs/dl/lib/python3.9/site-packages/sklearn/base.py:1389: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  return fit_method(estimator, *args, **kwargs)
+[Parallel(n_jobs=8)]: Using backend ThreadingBackend with 8 concurrent workers.
+[Parallel(n_jobs=8)]: Done   6 out of  10 | elapsed:    0.0s remaining:    0.0s
+[Parallel(n_jobs=8)]: Done  10 out of  10 | elapsed:    0.1s finished
+DONE 750000
+(50000, 51) (50000, 1)
+/root/workspace/tool/anaconda3/envs/dl/lib/python3.9/site-packages/sklearn/base.py:1389: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  return fit_method(estimator, *args, **kwargs)
+[Parallel(n_jobs=8)]: Using backend ThreadingBackend with 8 concurrent workers.
+[Parallel(n_jobs=8)]: Done   6 out of  10 | elapsed:    0.0s remaining:    0.0s
+[Parallel(n_jobs=8)]: Done  10 out of  10 | elapsed:    0.1s finished
+DONE 800000
+(50000, 51) (50000, 1)
+/root/workspace/tool/anaconda3/envs/dl/lib/python3.9/site-packages/sklearn/base.py:1389: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  return fit_method(estimator, *args, **kwargs)
+[Parallel(n_jobs=8)]: Using backend ThreadingBackend with 8 concurrent workers.
+[Parallel(n_jobs=8)]: Done   6 out of  10 | elapsed:    0.0s remaining:    0.0s
+[Parallel(n_jobs=8)]: Done  10 out of  10 | elapsed:    0.1s finished
+DONE 850000
+(50000, 51) (50000, 1)
+/root/workspace/tool/anaconda3/envs/dl/lib/python3.9/site-packages/sklearn/base.py:1389: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  return fit_method(estimator, *args, **kwargs)
+[Parallel(n_jobs=8)]: Using backend ThreadingBackend with 8 concurrent workers.
+[Parallel(n_jobs=8)]: Done   6 out of  10 | elapsed:    0.0s remaining:    0.0s
+[Parallel(n_jobs=8)]: Done  10 out of  10 | elapsed:    0.1s finished
+DONE 900000
+(50000, 51) (50000, 1)
+/root/workspace/tool/anaconda3/envs/dl/lib/python3.9/site-packages/sklearn/base.py:1389: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  return fit_method(estimator, *args, **kwargs)
+[Parallel(n_jobs=8)]: Using backend ThreadingBackend with 8 concurrent workers.
+[Parallel(n_jobs=8)]: Done   6 out of  10 | elapsed:    0.0s remaining:    0.0s
+[Parallel(n_jobs=8)]: Done  10 out of  10 | elapsed:    0.1s finished
+DONE 950000
+(50000, 51) (50000, 1)
+/root/workspace/tool/anaconda3/envs/dl/lib/python3.9/site-packages/sklearn/base.py:1389: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  return fit_method(estimator, *args, **kwargs)
+[Parallel(n_jobs=8)]: Using backend ThreadingBackend with 8 concurrent workers.
+[Parallel(n_jobs=8)]: Done   6 out of  10 | elapsed:    0.0s remaining:    0.0s
+[Parallel(n_jobs=8)]: Done  10 out of  10 | elapsed:    0.1s finished
+DONE 1000000
+[DecisionTreeRegressor(max_features=1.0, random_state=1630984966), DecisionTreeRegressor(max_features=1.0, random_state=472863509), DecisionTreeRegressor(max_features=1.0, random_state=1082704530), DecisionTreeRegressor(max_features=1.0, random_state=1930362544), DecisionTreeRegressor(max_features=1.0, random_state=273973624), DecisionTreeRegressor(max_features=1.0, random_state=21991934), DecisionTreeRegressor(max_features=1.0, random_state=1886585710), DecisionTreeRegressor(max_features=1.0, random_state=63725675), DecisionTreeRegressor(max_features=1.0, random_state=1374343434), DecisionTreeRegressor(max_features=1.0, random_state=1078007175), DecisionTreeRegressor(max_features=1.0, random_state=1120641607), DecisionTreeRegressor(max_features=1.0, random_state=596703244), DecisionTreeRegressor(max_features=1.0, random_state=1809996406), DecisionTreeRegressor(max_features=1.0, random_state=1746346386), DecisionTreeRegressor(max_features=1.0, random_state=1628242913), DecisionTreeRegressor(max_features=1.0, random_state=260859184), DecisionTreeRegressor(max_features=1.0, random_state=1678155482), DecisionTreeRegressor(max_features=1.0, random_state=149912898), DecisionTreeRegressor(max_features=1.0, random_state=240002774), DecisionTreeRegressor(max_features=1.0, random_state=1055804512), DecisionTreeRegressor(max_features=1.0, random_state=1143003350), DecisionTreeRegressor(max_features=1.0, random_state=309871855), DecisionTreeRegressor(max_features=1.0, random_state=1712917121), DecisionTreeRegressor(max_features=1.0, random_state=103289542), DecisionTreeRegressor(max_features=1.0, random_state=1158523357), DecisionTreeRegressor(max_features=1.0, random_state=1804991325), DecisionTreeRegressor(max_features=1.0, random_state=791384649), DecisionTreeRegressor(max_features=1.0, random_state=879807622), DecisionTreeRegressor(max_features=1.0, random_state=289651090), DecisionTreeRegressor(max_features=1.0, random_state=77957906), DecisionTreeRegressor(max_features=1.0, random_state=2086716136), DecisionTreeRegressor(max_features=1.0, random_state=306336984), DecisionTreeRegressor(max_features=1.0, random_state=345718192), DecisionTreeRegressor(max_features=1.0, random_state=343382717), DecisionTreeRegressor(max_features=1.0, random_state=1791906240), DecisionTreeRegressor(max_features=1.0, random_state=1447189998), DecisionTreeRegressor(max_features=1.0, random_state=1853235813), DecisionTreeRegressor(max_features=1.0, random_state=1207090563), DecisionTreeRegressor(max_features=1.0, random_state=794279141), DecisionTreeRegressor(max_features=1.0, random_state=1311327317), DecisionTreeRegressor(max_features=1.0, random_state=57703211), DecisionTreeRegressor(max_features=1.0, random_state=341518646), DecisionTreeRegressor(max_features=1.0, random_state=1967696695), DecisionTreeRegressor(max_features=1.0, random_state=515520411), DecisionTreeRegressor(max_features=1.0, random_state=913665551), DecisionTreeRegressor(max_features=1.0, random_state=1493865405), DecisionTreeRegressor(max_features=1.0, random_state=1970866987), DecisionTreeRegressor(max_features=1.0, random_state=433586009), DecisionTreeRegressor(max_features=1.0, random_state=1205792485), DecisionTreeRegressor(max_features=1.0, random_state=1292670281), DecisionTreeRegressor(max_features=1.0, random_state=1126329044), DecisionTreeRegressor(max_features=1.0, random_state=1173946867), DecisionTreeRegressor(max_features=1.0, random_state=1451915439), DecisionTreeRegressor(max_features=1.0, random_state=1281451265), DecisionTreeRegressor(max_features=1.0, random_state=323932029), DecisionTreeRegressor(max_features=1.0, random_state=640500381), DecisionTreeRegressor(max_features=1.0, random_state=1641183172), DecisionTreeRegressor(max_features=1.0, random_state=835454458), DecisionTreeRegressor(max_features=1.0, random_state=383668099), DecisionTreeRegressor(max_features=1.0, random_state=905070688), DecisionTreeRegressor(max_features=1.0, random_state=462983492), DecisionTreeRegressor(max_features=1.0, random_state=1375306464), DecisionTreeRegressor(max_features=1.0, random_state=1087414974), DecisionTreeRegressor(max_features=1.0, random_state=830881231), DecisionTreeRegressor(max_features=1.0, random_state=1399872725), DecisionTreeRegressor(max_features=1.0, random_state=1690176230), DecisionTreeRegressor(max_features=1.0, random_state=1717718577), DecisionTreeRegressor(max_features=1.0, random_state=876854648), DecisionTreeRegressor(max_features=1.0, random_state=1927129508), DecisionTreeRegressor(max_features=1.0, random_state=307863552), DecisionTreeRegressor(max_features=1.0, random_state=33311250), DecisionTreeRegressor(max_features=1.0, random_state=945738813), DecisionTreeRegressor(max_features=1.0, random_state=436283231), DecisionTreeRegressor(max_features=1.0, random_state=825341500), DecisionTreeRegressor(max_features=1.0, random_state=1108370885), DecisionTreeRegressor(max_features=1.0, random_state=2012977462), DecisionTreeRegressor(max_features=1.0, random_state=140707997), DecisionTreeRegressor(max_features=1.0, random_state=738202674), DecisionTreeRegressor(max_features=1.0, random_state=550325003), DecisionTreeRegressor(max_features=1.0, random_state=1682218494), DecisionTreeRegressor(max_features=1.0, random_state=898653074), DecisionTreeRegressor(max_features=1.0, random_state=2003220706), DecisionTreeRegressor(max_features=1.0, random_state=1422895670), DecisionTreeRegressor(max_features=1.0, random_state=340602311), DecisionTreeRegressor(max_features=1.0, random_state=1100663746), DecisionTreeRegressor(max_features=1.0, random_state=2101112024), DecisionTreeRegressor(max_features=1.0, random_state=1769989103), DecisionTreeRegressor(max_features=1.0, random_state=1541992318), DecisionTreeRegressor(max_features=1.0, random_state=124748658), DecisionTreeRegressor(max_features=1.0, random_state=311362711), DecisionTreeRegressor(max_features=1.0, random_state=635020682), DecisionTreeRegressor(max_features=1.0, random_state=2089448398), DecisionTreeRegressor(max_features=1.0, random_state=1622558360), DecisionTreeRegressor(max_features=1.0, random_state=637602095), DecisionTreeRegressor(max_features=1.0, random_state=448514357), DecisionTreeRegressor(max_features=1.0, random_state=2047368706), DecisionTreeRegressor(max_features=1.0, random_state=1725067761), DecisionTreeRegressor(max_features=1.0, random_state=1296763328), DecisionTreeRegressor(max_features=1.0, random_state=872611297), DecisionTreeRegressor(max_features=1.0, random_state=1159163065), DecisionTreeRegressor(max_features=1.0, random_state=1174685743), DecisionTreeRegressor(max_features=1.0, random_state=161799217), DecisionTreeRegressor(max_features=1.0, random_state=1784705812), DecisionTreeRegressor(max_features=1.0, random_state=1802154097), DecisionTreeRegressor(max_features=1.0, random_state=1123573410), DecisionTreeRegressor(max_features=1.0, random_state=1254770689), DecisionTreeRegressor(max_features=1.0, random_state=18182670), DecisionTreeRegressor(max_features=1.0, random_state=1592089438), DecisionTreeRegressor(max_features=1.0, random_state=124582449), DecisionTreeRegressor(max_features=1.0, random_state=402804600), DecisionTreeRegressor(max_features=1.0, random_state=786332069), DecisionTreeRegressor(max_features=1.0, random_state=2043614445), DecisionTreeRegressor(max_features=1.0, random_state=717752334), DecisionTreeRegressor(max_features=1.0, random_state=1755508533), DecisionTreeRegressor(max_features=1.0, random_state=1583703899), DecisionTreeRegressor(max_features=1.0, random_state=2087358756), DecisionTreeRegressor(max_features=1.0, random_state=1925050199), DecisionTreeRegressor(max_features=1.0, random_state=655254237), DecisionTreeRegressor(max_features=1.0, random_state=2125914877), DecisionTreeRegressor(max_features=1.0, random_state=1911891931), DecisionTreeRegressor(max_features=1.0, random_state=64647756), DecisionTreeRegressor(max_features=1.0, random_state=211994088), DecisionTreeRegressor(max_features=1.0, random_state=20838115), DecisionTreeRegressor(max_features=1.0, random_state=1258988820), DecisionTreeRegressor(max_features=1.0, random_state=1779371102), DecisionTreeRegressor(max_features=1.0, random_state=1845749372), DecisionTreeRegressor(max_features=1.0, random_state=599299196), DecisionTreeRegressor(max_features=1.0, random_state=1080385800), DecisionTreeRegressor(max_features=1.0, random_state=1890656733), DecisionTreeRegressor(max_features=1.0, random_state=501691115), DecisionTreeRegressor(max_features=1.0, random_state=361341887), DecisionTreeRegressor(max_features=1.0, random_state=1473071885), DecisionTreeRegressor(max_features=1.0, random_state=1775482185), DecisionTreeRegressor(max_features=1.0, random_state=1757200127), DecisionTreeRegressor(max_features=1.0, random_state=1797598488), DecisionTreeRegressor(max_features=1.0, random_state=1606370263), DecisionTreeRegressor(max_features=1.0, random_state=1265049592), DecisionTreeRegressor(max_features=1.0, random_state=2126679224), DecisionTreeRegressor(max_features=1.0, random_state=975937), DecisionTreeRegressor(max_features=1.0, random_state=1498451827), DecisionTreeRegressor(max_features=1.0, random_state=1382363244), DecisionTreeRegressor(max_features=1.0, random_state=537222030), DecisionTreeRegressor(max_features=1.0, random_state=1259280652), DecisionTreeRegressor(max_features=1.0, random_state=1768230753), DecisionTreeRegressor(max_features=1.0, random_state=1165210909), DecisionTreeRegressor(max_features=1.0, random_state=381032476), DecisionTreeRegressor(max_features=1.0, random_state=593609294), DecisionTreeRegressor(max_features=1.0, random_state=103402472), DecisionTreeRegressor(max_features=1.0, random_state=217663821), DecisionTreeRegressor(max_features=1.0, random_state=399088005), DecisionTreeRegressor(max_features=1.0, random_state=328257868), DecisionTreeRegressor(max_features=1.0, random_state=293414694), DecisionTreeRegressor(max_features=1.0, random_state=101155192), DecisionTreeRegressor(max_features=1.0, random_state=2097771189), DecisionTreeRegressor(max_features=1.0, random_state=1023343476), DecisionTreeRegressor(max_features=1.0, random_state=1540289115), DecisionTreeRegressor(max_features=1.0, random_state=1127038037), DecisionTreeRegressor(max_features=1.0, random_state=608639001), DecisionTreeRegressor(max_features=1.0, random_state=1972681810), DecisionTreeRegressor(max_features=1.0, random_state=794821810), DecisionTreeRegressor(max_features=1.0, random_state=536729416), DecisionTreeRegressor(max_features=1.0, random_state=1677112014), DecisionTreeRegressor(max_features=1.0, random_state=1417047927), DecisionTreeRegressor(max_features=1.0, random_state=1258118773), DecisionTreeRegressor(max_features=1.0, random_state=1049797686), DecisionTreeRegressor(max_features=1.0, random_state=1062565069), DecisionTreeRegressor(max_features=1.0, random_state=1730151935), DecisionTreeRegressor(max_features=1.0, random_state=267189627), DecisionTreeRegressor(max_features=1.0, random_state=1587368199), DecisionTreeRegressor(max_features=1.0, random_state=33601208), DecisionTreeRegressor(max_features=1.0, random_state=793483425), DecisionTreeRegressor(max_features=1.0, random_state=1983434247), DecisionTreeRegressor(max_features=1.0, random_state=1630034517), DecisionTreeRegressor(max_features=1.0, random_state=682119360), DecisionTreeRegressor(max_features=1.0, random_state=1239385134), DecisionTreeRegressor(max_features=1.0, random_state=1005286067), DecisionTreeRegressor(max_features=1.0, random_state=164629504), DecisionTreeRegressor(max_features=1.0, random_state=902144319), DecisionTreeRegressor(max_features=1.0, random_state=131062811), DecisionTreeRegressor(max_features=1.0, random_state=378787811), DecisionTreeRegressor(max_features=1.0, random_state=1926695214), DecisionTreeRegressor(max_features=1.0, random_state=1868798410), DecisionTreeRegressor(max_features=1.0, random_state=1761565374), DecisionTreeRegressor(max_features=1.0, random_state=73533016), DecisionTreeRegressor(max_features=1.0, random_state=677654275), DecisionTreeRegressor(max_features=1.0, random_state=972107672), DecisionTreeRegressor(max_features=1.0, random_state=1665474329), DecisionTreeRegressor(max_features=1.0, random_state=459737423), DecisionTreeRegressor(max_features=1.0, random_state=1409685525), DecisionTreeRegressor(max_features=1.0, random_state=846089138), DecisionTreeRegressor(max_features=1.0, random_state=1899790745), DecisionTreeRegressor(max_features=1.0, random_state=1169727699), DecisionTreeRegressor(max_features=1.0, random_state=1321974421), DecisionTreeRegressor(max_features=1.0, random_state=849986738), DecisionTreeRegressor(max_features=1.0, random_state=749141607), DecisionTreeRegressor(max_features=1.0, random_state=622573637), DecisionTreeRegressor(max_features=1.0, random_state=870142640), DecisionTreeRegressor(max_features=1.0, random_state=696116063), DecisionTreeRegressor(max_features=1.0, random_state=333224013), DecisionTreeRegressor(max_features=1.0, random_state=1413108063)]
+正在从第 950001 行开始读取 20000 行数据作为测试集...
+[Parallel(n_jobs=8)]: Using backend ThreadingBackend with 8 concurrent workers.
+[Parallel(n_jobs=8)]: Done  34 tasks      | elapsed:    0.0s
+[Parallel(n_jobs=8)]: Done 184 tasks      | elapsed:    0.1s
+[Parallel(n_jobs=8)]: Done 200 out of 200 | elapsed:    0.1s finished
+
+分数
+ 1.0
