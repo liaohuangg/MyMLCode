@@ -290,3 +290,24 @@ def RMES(result):
     train = abs(result["train_score"])**0.5
     test = abs(result["test_score"])**0.5
     return train.mean(), test.mean()
+# 打包成函数供后续使用
+# 评估指标RMSE
+def RMSE(cvresult, key):
+    return (abs(cvresult[key])**0.5).mean()
+
+# 计算参数空间大小
+def count_space(param):
+    no_option = 1
+    for i in param_grid_simple:
+        no_option *= len(param_grid_simple[i])
+    print(no_option)
+
+# 在最优参数上进行重新建模验证结果
+def rebuild_on_best_param(ad_reg):
+    cv = KFold(n_splits=5, shuffle=True, random_state=1412)
+    result_post_adjusted = cross_validate(ad_reg, X, y, cv=cv, scoring="neg_mean_squared_error",
+                                          return_train_score=True,
+                                          verbose=True,
+                                          n_jobs=-1)
+    print("训练RMSE:{:.3f}".format(RMSE(result_post_adjusted, "train_score")))
+    print("测试RMSE:{:.3f}".format(RMSE(result_post_adjusted, "test_score")))
