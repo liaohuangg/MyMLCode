@@ -1,83 +1,184 @@
-import torchvision
-import torchvision.transforms as transforms
-import matplotlib.pyplot as plt
 import torch
-from torch import nn
-from torch import optim
-from torch.nn import functional as F
-from torch.utils.data import DataLoader, TensorDataset
-# 包含对数据集本身数字进行修改的类
-# dataloader tensordataset对数据结构和归纳方式进行变换
-minist = torchvision.datasets.MNIST(
-    root='/root/workspace/MyMLCode/DLLearn/dataset', #目录地址
-    train=True, #是否是训练集
-    download=False, #是否下载数据集，已经下好了
-    transform=transforms.ToTensor() #对数据进行变换
+import torch.nn as nn
+import torch.optim as optim
+from torch.utils.data import DataLoader
+from torchvision import datasets, transforms
+import matplotlib.pyplot as plt
+
+# 确保数据集和数据加载器
+def get_data_loaders(batch_size=64):
+    # 数据预处理：转换为张量并标准化
+    transform = transforms.Compose([
+        transforms.ToTensor(),
+        transforms.Normalize((0.1307,), (0.3081,))  # MNIST数据集的均值和标准差
+    ])
+    
+    # 加载MNIST数据集
+    train_dataset = datasets.MNIST(
+        root='/root/workspace/MyMLCode/DLLearn/dataset', train=True, download=False, transform=transform
     )
-# 读取数据集
-# print(len(minist)) #打印数据集长度
-# print(minist.data.shape)
-# print(minist[0][0].shape) #打印第一张图片的形状
-# # 当前数据集缺少颜色通道维度(C=1)，实际应为[60000,1,28,28] 
-# # 神经网络通常需要三维输入(包含通道维度)，因此需要调整结构
-# plt.imshow(minist[0][0].view(28,28).numpy()) #显示第一张图片
-# plt.show() #显示图片
+    test_dataset = datasets.MNIST(
+        root='/root/workspace/MyMLCode/DLLearn/dataset', train=False, download=False, transform=transform
+    )
+    
+    # 创建数据加载器
+    train_loader = DataLoader(
+        train_dataset, batch_size=batch_size, shuffle=True, num_workers=2
+    )
+    test_loader = DataLoader(
+        test_dataset, batch_size=batch_size, shuffle=False, num_workers=2
+    )
+    
+    return train_loader, test_loader
 
-# print("end")
-lr = 0.15 #学习率
-gamma = 0.8 #动量参数
-epochs = 3 #训练轮数
-batch_size = 128 #批处理大小
-
-batchdata = DataLoader(
-    dataset=minist, #数据集
-    batch_size=batch_size, #批处理大小
-    shuffle=True#是否打乱数据
-)
-
-input_ = minist.data[0].numel()
-output_ = len(minist.targets.unique()) #输出类别数量
-
-class Model(nn.Module):
-    def __init__(self, in_features = 10, out_features = 2):
-        super(Model, self).__init__()
-        self.linear1 = nn.Linear(in_features, 128, bias = False)
-        self.output = nn.Linear(128, out_features, bias = False)
+# 定义LeNet-5模型
+class LeNet5(nn.Module):
+    def __init__(self):
+        super(LeNet5, self).__init__()
+        # 卷积层：1个输入通道，6个输出通道，5x5卷积核
+        self.conv1 = nn.Conv2d(1, 6, kernel_size=5)
+        # 平均池化层：2x2池化核，步长为2
+        self.pool1 = nn.AvgPool2d(kernel_size=2, stride=2)
+        # 卷积层：6个输入通道，16个输出通道，5x5卷积核
+        self.conv2 = nn.Conv2d(6, 16, kernel_size=5)
+        self.pool2 = nn.AvgPool2d(kernel_size=2, stride=2)
+        # 全连接层
+        self.fc1 = nn.Linear(16 * 4 * 4, 120)  # 16个通道，每个特征图4x4
+        self.fc2 = nn.Linear(120, 84)
+        self.fc3 = nn.Linear(84, 10)  # 10个类别输出（0-9）
+        
+        # 使用Tanh激活函数
+        self.tanh = nn.Tanh()
 
     def forward(self, x):
-        # 整理 x的结构, -1是占位符，请pytorch帮助我们自动计算-1对应的维度是多少
-        x = x.view(-1, 28*28)
-        sigma1 = torch.relu(self.linear1(x)) #激活函数
-        sigma2 = F.log_softmax(self.output(sigma1), dim=1) #输出层
-        return sigma2
-    
-# 定义一个训练函数
-def fit(net, batchdata, lr=0.01, gamma=0.9, epochs=10):
-    criterion = nn.NLLLoss()
-    opt = optim.SGD(net.parameters(), lr=lr, momentum=gamma)
+        # 第一层：卷积 -> 激活 -> 池化
+        x = self.conv1(x)
+        x = self.tanh(x)
+        x = self.pool1(x)
+        
+        # 第二层：卷积 -> 激活 -> 池化
+        x = self.conv2(x)
+        x = self.tanh(x)
+        x = self.pool2(x)
+        
+        # 展平特征图
+        x = x.view(-1, 16 * 4 * 4)
+        
+        # 全连接层
+        x = self.fc1(x)
+        x = self.tanh(x)
+        x = self.fc2(x)
+        x = self.tanh(x)
+        x = self.fc3(x)
+        
+        return x
+
+# 训练函数
+def train(model, train_loader, criterion, optimizer, device, epoch):
+    model.train()
+    running_loss = 0.0
     correct = 0
-    samples = 0
-    for epoch in range(epochs):  # 全数据被训练几次
-        for batch_idx, (x, y) in enumerate(batchdata):
-            y = y.view(x.shape[0])  # 降维
-            sigma = net.forward(x)  # 正向传播
-            loss = criterion(sigma, y)
-            loss.backward()
-            opt.step()
-            opt.zero_grad()
+    total = 0
+    
+    for batch_idx, (data, target) in enumerate(train_loader):
+        data, target = data.to(device), target.to(device)
+        
+        # 清零梯度
+        optimizer.zero_grad()
+        
+        # 前向传播
+        outputs = model(data)
+        loss = criterion(outputs, target)
+        
+        # 反向传播和优化
+        loss.backward()
+        optimizer.step()
+        
+        # 统计训练信息
+        running_loss += loss.item()
+        _, predicted = torch.max(outputs.data, 1)
+        total += target.size(0)
+        correct += (predicted == target).sum().item()
+        
+        # 每100个batch打印一次信息
+        if batch_idx % 100 == 99:
+            print(f'[{epoch + 1}, {batch_idx + 1}] loss: {running_loss / 100:.3f}')
+            running_loss = 0.0
+    
+    train_acc = 100 * correct / total
+    print(f'Train Accuracy: {train_acc:.2f}%')
+    return train_acc
 
-            # 求解准确率， 全部判断正确的样本数量/已经看过的总样本量
-            y_hat= torch.max(sigma, 1)[1] # 取出预测结果
-            correct += torch.sum(y_hat == y)# 统计预测正确的样本数量
+# 测试函数
+def test(model, test_loader, criterion, device):
+    model.eval()
+    test_loss = 0
+    correct = 0
+    total = 0
+    
+    # 不计算梯度
+    with torch.no_grad():
+        for data, target in test_loader:
+            data, target = data.to(device), target.to(device)
+            outputs = model(data)
+            test_loss += criterion(outputs, target).item()
             
-            samples += x.shape[0]  # 统计样本数
-            if(batch_idx + 1) % 100 == 0:
-                print("epoch {} : [{}/{}({:.0f}%)] loss:{:.6f} accuracy:{:.3f}".format(epoch+1, samples,
-                                                                                     epochs*len(batchdata.dataset), 
-                                                                                     100. * samples / (epochs*len(batchdata.dataset)+1),
-                                                                                     loss.data.item(),
-                                                                                     float(100. *(correct / samples))))
+            _, predicted = torch.max(outputs.data, 1)
+            total += target.size(0)
+            correct += (predicted == target).sum().item()
+    
+    test_loss /= len(test_loader.dataset)
+    test_acc = 100 * correct / total
+    print(f'Test set: Average loss: {test_loss:.4f}, Accuracy: {correct}/{total} ({test_acc:.2f}%)\n')
+    return test_acc
 
-torch.manual_seed(1) #设置随机种子
-model = Model(in_features=input_, out_features=output_) #创建模型
-fit(model, batchdata, lr=lr, gamma=gamma, epochs=epochs) #训练模型
+# 主函数
+def main():
+    # 设置设备
+    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    print(f'Using device: {device}')
+    
+    # 超参数
+    batch_size = 64
+    learning_rate = 0.001
+    num_epochs = 10
+    
+    # 获取数据加载器
+    train_loader, test_loader = get_data_loaders(batch_size)
+    
+    # 初始化模型、损失函数和优化器
+    model = LeNet5().to(device)
+    criterion = nn.CrossEntropyLoss()
+    optimizer = optim.Adam(model.parameters(), lr=learning_rate)
+    
+    # 记录准确率用于绘图
+    train_accuracies = []
+    test_accuracies = []
+    
+    # 训练和测试模型
+    for epoch in range(num_epochs):
+        print(f'Epoch {epoch + 1}/{num_epochs}')
+        print('-' * 10)
+        
+        train_acc = train(model, train_loader, criterion, optimizer, device, epoch)
+        test_acc = test(model, test_loader, criterion, device)
+        
+        train_accuracies.append(train_acc)
+        test_accuracies.append(test_acc)
+    
+    # 保存模型
+    torch.save(model.state_dict(), 'lenet5_mnist.pth')
+    print('Model saved as lenet5_mnist.pth')
+    
+    # 绘制准确率曲线
+    plt.plot(range(1, num_epochs + 1), train_accuracies, label='Train Accuracy')
+    plt.plot(range(1, num_epochs + 1), test_accuracies, label='Test Accuracy')
+    plt.xlabel('Epoch')
+    plt.ylabel('Accuracy (%)')
+    plt.title('LeNet-5 Accuracy on MNIST')
+    plt.legend()
+    plt.savefig('lenet5_accuracy.png')
+    plt.show()
+
+if __name__ == '__main__':
+    main()
