@@ -5,10 +5,13 @@ from torch.utils.data import DataLoader
 from torchvision import datasets, transforms
 import matplotlib.pyplot as plt
 
-# 数据预处理
+# alexnet的输入形状
+# 数据预处理：将MNIST转换为AlexNet兼容的输入格式
 transform = transforms.Compose([
+    transforms.Resize((224, 224)),  # 核心：将28×28放大到224×224
+    transforms.Grayscale(num_output_channels=3),  # 可选：将1通道转为3通道（模拟RGB）
     transforms.ToTensor(),
-    transforms.Normalize((0.1307,), (0.3081,))
+    transforms.Normalize((0.1307,), (0.3081,))  # 保持MNIST的归一化参数
 ])
 
 # 加载MNIST数据集
@@ -24,68 +27,63 @@ test_loader = DataLoader(test_dataset, batch_size=64, shuffle=False)
 
 # 定义AlexNet模型
 class AlexNet(nn.Module):
-    def __init__(self):
+    def __init__(self, in_channels=3, num_classes=10):
+        """
+        in_channels: 输入图像通道数（1 或 3，MNIST 用 1 或转 3 通道）
+        num_classes: 分类类别数（MNIST 是 10）
+        """
         super(AlexNet, self).__init__()
-        self.conv1 = nn.Conv2d(1, 64, kernel_size=3, stride=1, padding=1)
-        self.relu1 = nn.ReLU(inplace=True)
-        self.pool1 = nn.MaxPool2d(kernel_size=2, stride=2)
-
-        self.conv2 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
-        self.relu2 = nn.ReLU(inplace=True)
-        self.pool2 = nn.MaxPool2d(kernel_size=2, stride=2)
-
-        self.conv3 = nn.Conv2d(128, 256, kernel_size=3, stride=1, padding=1)
-        self.relu3 = nn.ReLU(inplace=True)
-
-        self.conv4 = nn.Conv2d(256, 256, kernel_size=3, stride=1, padding=1)
-        self.relu4 = nn.ReLU(inplace=True)
-
-        self.conv5 = nn.Conv2d(256, 128, kernel_size=3, stride=1, padding=1)
-        self.relu5 = nn.ReLU(inplace=True)
-        self.pool3 = nn.MaxPool2d(kernel_size=2, stride=2)
-
-        self.fc1 = nn.Linear(128 * 4 * 4, 1024)
-        self.relu6 = nn.ReLU(inplace=True)
-        self.dropout1 = nn.Dropout(p=0.5)
-
-        self.fc2 = nn.Linear(1024, 1024)
-        self.relu7 = nn.ReLU(inplace=True)
-        self.dropout2 = nn.Dropout(p=0.5)
-
-        self.fc3 = nn.Linear(1024, 10)
+        
+        # 核心卷积层（适配 224×224 输入）
+        self.features = nn.Sequential(
+            # 卷积层 1: 3→96（原版 AlexNet 是 3→96，这里可根据需求调整）
+            nn.Conv2d(in_channels, 96, kernel_size=11, stride=4, padding=2),
+            nn.ReLU(inplace=True),
+            # 池化层 1
+            nn.MaxPool2d(kernel_size=3, stride=2),
+            
+            # 卷积层 2: 96→256
+            nn.Conv2d(96, 256, kernel_size=5, stride=1, padding=2),
+            nn.ReLU(inplace=True),
+            # 池化层 2
+            nn.MaxPool2d(kernel_size=3, stride=2),
+            
+            # 卷积层 3: 256→384
+            nn.Conv2d(256, 384, kernel_size=3, stride=1, padding=1),
+            nn.ReLU(inplace=True),
+            
+            # 卷积层 4: 384→384
+            nn.Conv2d(384, 384, kernel_size=3, stride=1, padding=1),
+            nn.ReLU(inplace=True),
+            
+            # 卷积层 5: 384→256
+            nn.Conv2d(384, 256, kernel_size=3, stride=1, padding=1),
+            nn.ReLU(inplace=True),
+            # 池化层 3
+            nn.MaxPool2d(kernel_size=3, stride=2),
+        )
+        
+        # 全连接层（适配卷积后的特征维度）
+        self.classifier = nn.Sequential(
+            # 关键：计算卷积后的输出维度
+            # 输入维度 = 256 * 6 * 6 （224→3次池化后：224/(4*2*2)=6）
+            nn.Dropout(),
+            nn.Linear(256 * 6 * 6, 4096),
+            nn.ReLU(inplace=True),
+            nn.Dropout(),
+            nn.Linear(4096, 4096),
+            nn.ReLU(inplace=True),
+            nn.Linear(4096, num_classes),
+        )
 
     def forward(self, x):
-        x = self.conv1(x)
-        x = self.relu1(x)
-        x = self.pool1(x)
-
-        x = self.conv2(x)
-        x = self.relu2(x)
-        x = self.pool2(x)
-
-        x = self.conv3(x)
-        x = self.relu3(x)
-
-        x = self.conv4(x)
-        x = self.relu4(x)
-
-        x = self.conv5(x)
-        x = self.relu5(x)
-        x = self.pool3(x)
-
-        x = x.view(x.size(0), -1)
-
-        x = self.fc1(x)
-        x = self.relu6(x)
-        x = self.dropout1(x)
-
-        x = self.fc2(x)
-        x = self.relu7(x)
-        x = self.dropout2(x)
-
-        x = self.fc3(x)
+        # 特征提取
+        x = self.features(x)
+        # 展平（适配全连接层）
+        x = x.view(x.size(0), 256 * 6 * 6)
+        # 分类
+        x = self.classifier(x)
         return x
-
 
 # 训练模型
 def train(model, train_loader, criterion, optimizer, device, epoch):

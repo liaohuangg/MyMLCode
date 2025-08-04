@@ -15,10 +15,10 @@ transform = transforms.Compose([
 
 # 加载MNIST数据集
 train_dataset = datasets.MNIST(
-    root='./data', train=True, download=True, transform=transform
+    root='/root/workspace/MyMLCode/DLLearn/dataset', train=True, download=False, transform=transform
 )
 test_dataset = datasets.MNIST(
-    root='./data', train=False, download=True, transform=transform
+    root='/root/workspace/MyMLCode/DLLearn/dataset', train=False, download=False, transform=transform
 )
 
 # 创建数据加载器
